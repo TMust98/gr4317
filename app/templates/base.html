@@ -1,0 +1,11 @@
+{% if title %}
+    <title>{{ title }}</title>
+{% else %}
+    <title>Index Page</title>
+{% endif %}
+
+{% block content %}
+    <div><a href="{{ url_for('index') }}">Начальная страница</a></div>
+    <div><a href="{{ url_for('home') }}">Домашняя страница</a></div>
+    {% block app_content %}{% endblock %}
+{% endblock %}
