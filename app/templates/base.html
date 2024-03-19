@@ -6,10 +6,26 @@
     <title>Index Page</title>
 {% endif %}
 
+{% block navbar %}
+    <nav class="navbar navbar-default navbar-static">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse js-navbar">
+                <ul class="nav navbar-nav">
+                    <li><a href="{{ url_for('index') }}">Начальная страница</a></li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li><a href="{{ url_for('home') }}">Домашняя страница</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{{ url_for('login') }}">Вход</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+{% endblock %}
+
+
 {% block content %}
-    <div><a href="{{ url_for('index') }}">Начальная страница</a></div>
-    <div><a href="{{ url_for('home') }}">Домашняя страница</a></div>
-    <div><a href="{{ url_for('login') }}">Вход</a></div>
 
     <div class="container">
         {% with messages = get_flashed_messages(with_categories=true) %}

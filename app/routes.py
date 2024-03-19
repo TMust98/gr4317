@@ -1,6 +1,7 @@
 from app import app
 from flask import render_template, url_for, redirect, flash
 from app.forms import LoginForm
+from app.models import User
 
 @app.route('/')
 @app.route('/index')
